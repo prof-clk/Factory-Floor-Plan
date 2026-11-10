@@ -132,7 +132,7 @@ if svg_file is not None:
 
 if st.sidebar.button("Load Sample Data", type="primary"):
     try:
-        st.session_state.log = pd.read_excel("log.xlsx", engine="openpyxl", dtype=str)
+        st.session_state.log = pd.read_csv("log.csv.gz", dtype=str)
         with open("factory.svg", "r", encoding="utf-8", errors="replace") as f:
             st.session_state.svg = f.read()
         st.sidebar.info("Sample data loaded.")
